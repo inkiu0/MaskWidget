@@ -5,20 +5,11 @@
 
 #define LOCTEXT_NAMESPACE "UMG"
 
-static FMaskWidgetStyle* DefaultMaskWidgetStyle = nullptr;
-
 UMaskWidget::UMaskWidget(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 	, BgColorAndOpacity(FLinearColor::White)
 {
-	if (DefaultMaskWidgetStyle == nullptr)
-	{
-		DefaultMaskWidgetStyle = new FMaskWidgetStyle(FCoreStyle::Get().GetWidgetStyle<FMaskWidgetStyle>("MaskWidget"));
-		DefaultMaskWidgetStyle->UnlinkColors();
-	}
 
-	WidgetStyle = *DefaultMaskWidgetStyle;
-	WidgetStyle.BackgroundImage.TintColor = FLinearColor::White;
 }
 
 TSharedRef<SWidget> UMaskWidget::RebuildWidget()
