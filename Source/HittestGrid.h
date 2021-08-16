@@ -8,6 +8,7 @@
 #include "Layout/Clipping.h"
 #include "Input/Events.h"
 #include "Widgets/SWidget.h"
+#include "Layout/SlateClickClippingState.h"
 
 class FArrangedChildren;
 
