@@ -833,7 +833,7 @@ FHittestGrid::FIndexAndDistance FHittestGrid::GetHitIndexFromCellIndex(const FGr
 
 				// HankShu-inkiu0@gmail.com add ClickClip Start
 				bool IsClickThrough = IsThroughClickClip(Params, TestWidget.Get());
-				if (bPointInsideClipMasks && IsClickThrough)
+				if (bPointInsideClipMasks && !IsClickThrough)
 				// HankShu-inkiu0@gmail.com add ClickClip End
 				{
 					// Compute the render space clipping rect (FGeometry exposes a layout space clipping rect).
