@@ -141,8 +141,8 @@ int32 SMaskWidget::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeom
 	{
 		if (Clips[i].IsEnable())
 		{
-			FVector2D MaskPos = TransformPoint(TranLayout, Clips[i].GetPos());
-			Args.GetHittestGrid().AddClickClip(this, MakeShareable(new FSlateClickClippingState(i, MaskPos, Clips[i].GetSize(), FOnClickClipClicked::CreateRaw(MutableThis, &SMaskWidget::OnClickClipClicked))));
+			FGeometry MaskGeometry = AllottedGeometry.MakeChild(Clips[i].GetPos(), Clips[i].GetSize(), 1.f);
+			Args.GetHittestGrid().AddClickClip(this, MakeShareable(new FSlateClickClippingState(i, MaskGeometry, FOnClickClipClicked::CreateRaw(MutableThis, &SMaskWidget::OnClickClipClicked))));
 		}
 	}
 
