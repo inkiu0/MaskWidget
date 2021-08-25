@@ -3,11 +3,15 @@
 #include "Materials/MaterialInstanceDynamic.h"
 
 FMaskWidgetStyle::FMaskWidgetStyle()
+: BackgroundImage()
+, MaskMatBrush()
 {
+	static UMaterial* Mat = LoadObject<UMaterial>(NULL, TEXT("/Game/Assets/UI/Material/Slate/MaskMaterial.MaskMaterial"));
 	if (UMaterial* Mat = LoadObject<UMaterial>(NULL, TEXT("/Game/Assets/UI/Material/Slate/MaskMaterial.MaskMaterial")))
 	{
 		if (UMaterialInstanceDynamic* DyMat = UMaterialInstanceDynamic::Create(Mat, GetTransientPackage()))
 		{
+			MaskDynamicMaterial = DyMat;
 			MaskMatBrush.SetResourceObject(DyMat);
 		}
 		else
@@ -20,6 +24,7 @@ FMaskWidgetStyle::FMaskWidgetStyle()
 void FMaskWidgetStyle::GetResources(TArray< const FSlateBrush* >& OutBrushes) const
 {
 	OutBrushes.Add(&BackgroundImage);
+	OutBrushes.Add(&MaskMatBrush);
 }
 
 const FName FMaskWidgetStyle::TypeName(TEXT("FMaskWidgetStyle"));
