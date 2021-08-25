@@ -152,6 +152,11 @@ public:
 	UPROPERTY()
 	FSlateBrush MaskMatBrush;
 
+private:
+
+	UPROPERTY()
+	UMaterialInstanceDynamic* MaskDynamicMaterial;
+
 public:
 
 	/**
