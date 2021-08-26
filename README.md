@@ -4,7 +4,7 @@
 
 <p align="center">
 <img src="https://img.shields.io/badge/version-2021.08.26-green.svg?longCache=true&style=for-the-badge">
-<img src="https://img.shields.io/travis/com/gruntjs/grunt?style=for-the-badge">
+<img src="https://img.shields.io/appveyor/build/gruntjs/grunt?style=for-the-badge">
 <img src="https://img.shields.io/badge/license-SATA-blue.svg?longCache=true&style=for-the-badge">
 </p>
 
