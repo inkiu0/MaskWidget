@@ -1,6 +1,6 @@
 <h1 align="center">- UE4MaskWidget -</h1>
 
-<h4 align="center">UE4自定义遮罩，提供区域镂空和点击穿透</h4>
+<h4 align="center">UE4自定义遮罩，提供区域镂空和点击穿透，特别适合新手引导</h4>
 
 <p align="center">
 <img src="https://img.shields.io/badge/version-2021.08.26-green.svg?longCache=true&style=for-the-badge">
