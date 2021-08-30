@@ -19,6 +19,10 @@ SlateClickClippingState.cpp 放到 Engine\Source\Runtime\SlateCore\Private\Layou
 2. [【UEInside】编写自定义控件——镂空遮罩Mask（二）](https://zhuanlan.zhihu.com/p/354708184)
 3. [【UEInside】编写自定义控件——镂空遮罩Mask（三）](https://zhuanlan.zhihu.com/p/354793040)
 
+## 注意事项
+MaskTexture必须是RGBA32，ETC和ASTC都是基于块压缩的，压缩后取到的值是不对的。
+目前一个控件上只支持最多3个Clip，如果需要增加Clip，需要修改shader中的clip数量，然后修改cpp中的MAX_MASK_CLIP_COUNT值。
+
 ## 许可证
 
 MaskWidget is under The Star And Thank Author License (SATA)
