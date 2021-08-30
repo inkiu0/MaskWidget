@@ -149,13 +149,8 @@ public:
 
 	bool RemoveMaskClickClip(const int32& ClipIndex);
 
-	UPROPERTY()
+	UPROPERTY(Transient)
 	FSlateBrush MaskMatBrush;
-
-private:
-
-	UPROPERTY()
-	UMaterialInstanceDynamic* MaskDynamicMaterial;
 
 public:
 
