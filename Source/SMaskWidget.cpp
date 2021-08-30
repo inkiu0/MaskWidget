@@ -159,7 +159,7 @@ bool SMaskWidget::OnClickClipClicked(const FVector2D& HitUVInMask, const int32& 
 		int32 SizeY = MaskTexture->GetSizeY();
 		int32 BufferLen = SizeX * SizeY;
 		int32 BufferIdx = floor(HitUVInMask.Y * SizeY) * SizeX + floor(HitUVInMask.X * SizeX);
-		if (const FColor* MaskData = static_cast<const FColor*>(MaskTexture->PlatformData->Mips[0].BulkData.LockReadOnly()))
+		if (const FColor* MaskData = reinterpret_cast<const FColor*>(MaskTexture->PlatformData->Mips[0].BulkData.LockReadOnly()))
 		{
 			if (BufferIdx >= 0 && BufferIdx < BufferLen)
 			{
