@@ -9,8 +9,7 @@ FSlateClickClippingState::FSlateClickClippingState(const int32& Index, const FGe
 
 bool FSlateClickClippingState::IsPointInside(const FVector2D& Point) const
 {
-	FVector2D LocalPoint = DrawGeometry.AbsoluteToLocal(Point);
-	FVector2D HitUVInMask = (LocalPoint - DrawGeometry.GetLocalPositionAtCoordinates(FVector2D(0.f, 0.f))) / DrawGeometry.GetLocalSize();
+	FVector2D HitUVInMask = DrawGeometry.AbsoluteToLocal(Point) / DrawGeometry.GetLocalSize();
 	if (HitUVInMask.X >= 0 && HitUVInMask.X <= 1 &&
 		HitUVInMask.Y >= 0 && HitUVInMask.Y <= 1)
 	{
@@ -23,8 +22,7 @@ bool FSlateClickClippingState::IsPointInside(const FVector2D& Point) const
 bool FSlateClickClippingState::IsClickThrough(const FVector2D& Point) const
 {
 	bool bThroughMask = false;
-	FVector2D LocalPoint = DrawGeometry.AbsoluteToLocal(Point);
-	FVector2D HitUVInMask = (LocalPoint - DrawGeometry.GetLocalPositionAtCoordinates(FVector2D(0.f, 0.f))) / DrawGeometry.GetLocalSize();
+	FVector2D HitUVInMask = DrawGeometry.AbsoluteToLocal(Point) / DrawGeometry.GetLocalSize();
 	if (HitUVInMask.X >= 0 && HitUVInMask.X <= 1 &&
 		HitUVInMask.Y >= 0 && HitUVInMask.Y <= 1)
 	{
