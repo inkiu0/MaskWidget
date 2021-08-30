@@ -11,7 +11,6 @@ FMaskWidgetStyle::FMaskWidgetStyle()
 	{
 		if (UMaterialInstanceDynamic* DyMat = UMaterialInstanceDynamic::Create(Mat, GetTransientPackage()))
 		{
-			MaskDynamicMaterial = DyMat;
 			MaskMatBrush.SetResourceObject(DyMat);
 		}
 		else
