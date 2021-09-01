@@ -16,13 +16,11 @@ void SMaskWidget::Construct(const FArguments& InArgs)
 void SMaskWidget::SetBgColorAndOpacity(const TAttribute<FSlateColor>& InColorAndOpacity)
 {
 	SetAttribute(BgColorAndOpacity, InColorAndOpacity, EInvalidateWidgetReason::Paint);
-	IsMaskUpdated = true;
 }
 
 void SMaskWidget::SetBgColorAndOpacity(FLinearColor InColorAndOpacity)
 {
 	SetBgColorAndOpacity(TAttribute<FSlateColor>(InColorAndOpacity));
-	IsMaskUpdated = true;
 }
 
 void SMaskWidget::SetStyle(const FMaskWidgetStyle* InStyle)
