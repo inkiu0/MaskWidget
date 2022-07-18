@@ -179,10 +179,14 @@ bool SMaskWidget::OnClickClipClicked(const FVector2D& HitUVInMask, const int32& 
 		bThroughMask = FVector2D::DistSquared(HitUVInMask - 0.5f, FVector2D::ZeroVector) < 0.25f;
 	}
 
+// 移动设备没有Hover，此时触发可以认为是OnClick
+// 触发OnClicked是为了给用户一个比较方便的方法处理MaskWidget被点击了
+#if PLATFORM_IOS || PLATFORM_ANDROID
 	if (OnClicked.IsBound())
 	{
 		OnClicked.Execute(ClipIndex, bThroughMask);
 	}
+#endif
 
 	return bThroughMask;
 }
